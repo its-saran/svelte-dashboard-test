@@ -8,7 +8,11 @@ export default {
       'handWriting' : ['Kalam', 'cursive']
     },
     extend: {
-      colors: {}
+      colors: {},
+      zIndex: {
+        navBarToggle: 91,
+        navBar: 90,
+      }
     },
   },
   plugins: [],
