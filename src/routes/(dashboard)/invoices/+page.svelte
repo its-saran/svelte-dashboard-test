@@ -1,101 +1,62 @@
-Invoices
+<script lang="ts">
+	import Search from '$lib/components/Search.svelte';
+	import Tag from '$lib/components/Tag.svelte';
+	import View from '$lib/components/icons/View.svelte';
+	import ThreeDots from '$lib/components/icons/ThreeDots.svelte';
+	import CircledAmount from '$lib/components/circledAmount.svelte';
+</script>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+<svelte:head>
+	<title>Invoices | The Dollar</title>
+</svelte:head>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+<div class="flex justify-between items-center mb-16">
+	<!-- Search field -->
+	<Search />
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+	<!-- New invoice Button -->
+	<div>
+		<button
+			class="relative whitespace-nowrap rounded-lg bg-violet-700 px-10 py-3 font-sansSerif text-xl font-black text-white shadow-colored hover:shadow-coloredHover translate-y-0 hover:-translate-y-2 transition-all"
+			>+ Invoice</button
+		>
+	</div>
+</div>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+<!-- List of invoices -->
+<div>
+	<!-- header -->
+	<div class="table-header invoice-table text-violet-700">
+		<h3>Status</h3>
+		<h3>Due Date</h3>
+		<h3>ID</h3>
+		<h3>Client</h3>
+		<h3>Amount</h3>
+		<div />
+		<div />
+		<div />
+	</div>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+	<!-- invoices -->
+	<div class="invoice-table items-center bg-white py-6 rounded-lg shadow-tableRow">
+		<div><Tag label="current" /></div>
+		<div class="text-lg">8/1/2023</div>
+		<div class="text-lg">12345</div>
+		<div class="text-xl font-bold">Compressed.fm</div>
+		<div class="text-lg font-mono font-bold">$500.00</div>
+		<div class="text-lg center text-pastelPurple hover:text-daisyBush">
+			<a href=""><View /></a>
+		</div>
+		<div class="text-lg center">
+			<button class="text-pastelPurple hover:text-daisyBush"><ThreeDots /></button>
+		</div>
+	</div>
+</div>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+<CircledAmount label="Total" amount="$1,500.00" />
 
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
-
-<p>
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, eos neque ipsum harum expedita ab
-	unde, aut commodi asperiores rem quod ducimus est nisi a iure provident fugit impedit minima?
-</p>
+<style lang="postcss">
+	.table-header {
+		@apply text-xl font-bold leading-snug;
+	}
+</style>
