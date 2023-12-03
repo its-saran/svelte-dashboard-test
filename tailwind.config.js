@@ -21,7 +21,7 @@ export default {
       },
       colors: {
         lavenderIndigo: '#8657e1',
-        daisyBush: '#4714a5',
+        daisyBush: '#3c1499',
         goldenFizz: '#feff40',
         whisper: '#f9f4f9',
         pastelPurple: '#b2a1bb',

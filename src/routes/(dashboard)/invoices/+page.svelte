@@ -4,6 +4,7 @@
 	import Search from '$lib/components/Search.svelte';
 	import CircledAmount from '$lib/components/circledAmount.svelte';
 	import InvoiceRow from './InvoiceRow.svelte';
+	import { centsToDollars, sumInvoices } from '$lib/utils/moneyHelper';
 
 	onMount(() => {
 		loadInvoices();
@@ -38,7 +39,7 @@
 		<h3>Due Date</h3>
 		<h3>ID</h3>
 		<h3>Client</h3>
-		<h3>Amount</h3>
+		<h3 class="text-right">Amount</h3>
 		<div />
 		<div />
 		<div />
@@ -50,7 +51,7 @@
 	{/each}
 </div>
 
-<CircledAmount label="Total" amount="$1,500.00" />
+<CircledAmount label="Total" amount={`$${centsToDollars(sumInvoices($invoices))}`} />
 
 <style lang="postcss">
 	.table-header {

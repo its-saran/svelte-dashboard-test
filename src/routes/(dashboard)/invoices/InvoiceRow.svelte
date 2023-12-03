@@ -2,20 +2,35 @@
 	import Tag from '$lib/components/Tag.svelte';
 	import View from '$lib/components/icons/View.svelte';
 	import ThreeDots from '$lib/components/icons/ThreeDots.svelte';
-	import { sumLineItems } from '$lib/utils/moneyHelper';
+	import { sumLineItems, centsToDollars } from '$lib/utils/moneyHelper';
+	import { convertDate, isLate } from '$lib/utils/dateHelper';
 
 	export let invoice: Invoice;
+
+	const getInvoiceLabel = () => {
+		if (invoice.invoiceStatus === 'draft') {
+			return 'draft';
+		} else if (invoice.invoiceStatus === 'sent' && !isLate(invoice.dueDate)) {
+			return 'sent';
+		} else if (invoice.invoiceStatus === 'sent' && isLate(invoice.dueDate)) {
+			return 'late';
+		} else if (invoice.invoiceStatus === 'paid') {
+			return 'paid';
+		}
+	};
 </script>
 
 <div
 	class="invoice-table invoice-row items-center rounded-lg bg-white py-3 shadow-tableRow lg:py-6"
 >
-	<div class="status"><Tag className="ml-auto lg:ml-0" label={invoice.invoiceStatus} /></div>
-	<div class="text-sm lg:text-lg dueDate">{invoice.dueDate}</div>
-	<div class="text-sm lg:text-lg invoiceNumber">{invoice.invoiceNumber}</div>
-	<div class="text-base lg:text-xl font-bold clientName">{invoice.client.name}</div>
-	<div class="text-sm lg:text-lg font-mono font-bold amount text-right">
-		{sumLineItems(invoice.lineItems)}
+	<div class="status"><Tag className="ml-auto lg:ml-0" label={getInvoiceLabel()} /></div>
+	<div class="dueDate text-sm lg:text-lg">{convertDate(invoice.dueDate)}</div>
+	<div class="invoiceNumber text-sm lg:text-lg">{invoice.invoiceNumber}</div>
+	<div class="clientName text-base lg:text-xl font-bold whitespace-nowrap truncate">
+		{invoice.client.name}
+	</div>
+	<div class="amount text-sm lg:text-lg font-mono font-bold text-right">
+		${centsToDollars(sumLineItems(invoice.lineItems))}
 	</div>
 	<div class="text-sm lg:text-lg center viewButton hidden lg:block">
 		<a href="" class="text-pastelPurple hover:text-daisyBush"><View /></a>

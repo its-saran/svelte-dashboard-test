@@ -31,11 +31,11 @@
 </button>
 
 <header
-	class="fixed z-navBar transition-transform md:relative md:col-span-3 w-full h-screen md:h-full -translate-x-full md:translate-x-0 text-center bg-violet-900"
+	class="fixed z-navBar transition-transform md:relative md:col-span-3 w-full h-screen md:h-full -translate-x-full md:translate-x-0 text-center bg-daisyBush"
 	class:translate-x-0={isNavShowing}
 >
-	<div class="my-5 md:mb-12">
-		<a href="/invoices">
+	<div class="my-5 md:mb-12 mx-8">
+		<a href="/analytics">
 			<img src="/images/logo.svg" alt="The Dollar Board" class="mx-auto" />
 		</a>
 	</div>
